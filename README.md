@@ -1,10 +1,4 @@
-Perfect 💡 since your project is **Avis Billing** (a Django + POS + subscription system inspired by Ezo Billing with PhonePe integration), here’s a **pakka professional README.md** template for your repo.
 
-I’ve included project overview, features, tech stack, installation guide, and contribution guidelines.
-
----
-
-````markdown
 # 🚀 Avis Billing
 
 Avis Billing is a modern **Point of Sale (POS) and Billing SaaS Platform** inspired by Ezo Billing.  
@@ -38,7 +32,7 @@ It is built with **Django** for backend and designed to support **shop owners an
   - Django backend with REST API
   - Modern UI (Next.js + shadcn planned)
 
----
+
 
 ## 🛠️ Tech Stack
 
