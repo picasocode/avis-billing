@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-100 dark:bg-gray-900">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperAdmin Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        /* A simple animation for the main content card */
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 0.6s ease-out forwards;
+        }
+
+        /* Dark mode adjustments for card shadow */
+        .dark .shadow-2xl {
+            --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+
+        /* Custom properties for Roboto Mono */
+        body{
+          font-family: "Roboto Mono", monospace;
+          font-optical-sizing: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900  antialiased flex flex-col items-center justify-center min-h-screen p-4 transition-colors duration-300 font-mono">
+
+    <div class="mb-8 text-center">
+        <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-16 w-auto mx-auto text-[#223C4A] dark:text-gray-200">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-6 2a.75.75 0 01.75-.75h14.25a.75.75 0 01.75.75v6.75a.75.75 0 01-.75.75H2.25a.75.75 0 01-.75-.75v-6.75z" />
+            </svg>
+        </a>
+        <p class="mt-2 text-sm text-[#223C4A] dark:text-gray-300 font-light tracking-widest uppercase">Building a Better Tech</p>
+    </div>
+
+    <div class="w-full max-w-sm sm:max-w-md bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-6 sm:p-8 animate-fade-in-up transition-all duration-300 ease-in-out transform hover:scale-[1.02] active:scale-100">
+        <div class="text-center">
+            <h1 class="text-3xl font-extrabold text-[#223C4A] dark:text-gray-100 tracking-tight">SuperAdmin Login</h1>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please sign in to your privileged account.</p>
+        </div>
+
+        <form id="superadminForm" class="mt-6 space-y-5">
+            <div>
+                <label for="email-address" class="sr-only">Email address</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-5 h-5 text-gray-400 dark:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                        </svg>
+                    </div>
+                    <input id="email-address" name="email" type="email" autocomplete="email" required class="block w-full pl-10 pr-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#D13F0B] focus:border-[#D13F0B] sm:text-sm" placeholder="Email address">
+                </div>
+            </div>
+
+            <div>
+                <label for="password" class="sr-only">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-5 h-5 text-gray-400 dark:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-6 2a.75.75 0 01.75-.75h14.25a.75.75 0 01.75.75v6.75a.75.75 0 01-.75.75H2.25a.75.75 0 01-.75-.75v-6.75z" />
+                        </svg>
+                    </div>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full pl-10 pr-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#D13F0B] focus:border-[#D13F0B] sm:text-sm" placeholder="Password">
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-[#D13F0B] dark:text-[#D13F0B] border-gray-300 dark:border-gray-600 rounded focus:ring-[#D13F0B] dark:bg-gray-700">
+                    <label for="remember-me" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">
+                        Remember me
+                    </label>
+                </div>
+                <div class="text-sm">
+                    <a href="#" class="font-medium text-[#D13F0B] hover:text-[#b23308] dark:hover:text-[#b23308] transition-colors duration-200">
+                        Forgot password?
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="group relative flex justify-center w-full py-2.5 px-4 border border-transparent text-sm font-semibold rounded-lg text-white bg-[#D13F0B] hover:bg-[#b23308] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D13F0B] dark:focus:ring-offset-gray-800 transition-all duration-300 transform active:scale-95">
+                    <span id="button-text">Sign in</span>
+                    <span id="button-spinner" class="hidden absolute right-3 top-1/2 -translate-y-1/2">
+                        <svg class="w-5 h-5 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+
+            <div id="status-message" class="text-center text-sm font-medium"></div>
+        </form>
+
+        <div id="result-container" class="mt-6">
+            <pre id="result" class="hidden w-full p-4 overflow-auto text-sm text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 transition-all duration-300"></pre>
+        </div>
+    </div>
+
+    <footer class="mt-8 text-gray-500 dark:text-gray-500 text-sm">
+        &copy; 2025 Avis Technologies. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById("superadminForm").onsubmit = async function(e) {
+            e.preventDefault();
+
+            const email = e.target.email.value;
+            const password = e.target.password.value;
+            const resultElement = document.getElementById("result");
+            const statusElement = document.getElementById("status-message");
+            const button = document.querySelector('button[type="submit"]');
+            const buttonText = document.getElementById("button-text");
+            const buttonSpinner = document.getElementById("button-spinner");
+
+            // Reset previous states
+            resultElement.textContent = "";
+            resultElement.classList.add("hidden");
+            statusElement.textContent = "";
+
+            // Show loading state
+            button.disabled = true;
+            button.classList.add('cursor-not-allowed', 'opacity-75');
+            buttonText.textContent = "Signing in...";
+            buttonSpinner.classList.remove("hidden");
+            statusElement.textContent = "Processing login request...";
+            statusElement.className = "mt-4 text-center text-sm font-medium text-gray-600 dark:text-gray-400";
+
+            try {
+                // This will fail in a browser since the API endpoint does not exist
+                const response = await fetch("/api/accounts/superadmin-login/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email,
+                        password
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    statusElement.textContent = "Login successful! Redirecting...";
+                    statusElement.className = "mt-4 text-center text-sm font-medium text-green-600 dark:text-green-400";
+                    resultElement.textContent = JSON.stringify(data, null, 2);
+                    resultElement.classList.remove("hidden");
+                } else {
+                    statusElement.textContent = data.message || "Login failed. Please check your credentials.";
+                    statusElement.className = "mt-4 text-center text-sm font-medium text-red-600 dark:text-red-400";
+                }
+
+            } catch (error) {
+                statusElement.textContent = "An unexpected network error occurred. Please try again.";
+                statusElement.className = "mt-4 text-center text-sm font-medium text-red-600 dark:text-red-400";
+                console.error("Login Error:", error);
+            } finally {
+                // Revert loading state
+                button.disabled = false;
+                button.classList.remove('cursor-not-allowed', 'opacity-75');
+                buttonText.textContent = "Sign in";
+                buttonSpinner.classList.add("hidden");
+            }
+        };
+    </script>
+</body>
+
+</html>

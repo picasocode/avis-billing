@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-100 dark:bg-gray-900">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avis Billing – {% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* A simple animation for the main content card */
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.6s ease-out forwards;
+        }
+
+        /* Optional: Dark mode adjustments for card shadow */
+        .dark .shadow-2xl {
+            --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 font-sans antialiased flex flex-col items-center justify-center min-h-screen p-4 transition-colors duration-300">
+
+    <div class="mb-8 text-center">
+        <a href="/">
+            <img src="{% static 'images/avis-logo.png' %}" alt="Avis Billing" class="h-16 w-auto mx-auto drop-shadow-lg">
+        </a>
+        <p class="mt-2 text-sm text-[#223C4A] dark:text-gray-300 font-light tracking-widest uppercase">Building a Better Tech</p>
+    </div>
+
+    <div class="w-full max-w-sm sm:max-w-md bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-6 sm:p-8 animate-fade-in-up transition-all duration-300 ease-in-out transform hover:scale-[1.02] active:scale-100">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="mt-8 text-gray-500 dark:text-gray-500 text-sm">
+        &copy; {{ now.year }} Avis Technologies. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
